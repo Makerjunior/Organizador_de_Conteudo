@@ -1,8 +1,7 @@
 
-
-
 window.addEventListener('DOMContentLoaded', () => {
   const fileList = document.getElementById('filelist');
+  const searchBox = document.getElementById('searchbox');
 
   // Pasta contendo os arquivos
   const pasta = 'Arquivos';
@@ -28,7 +27,7 @@ window.addEventListener('DOMContentLoaded', () => {
         const extension = file.split('.').pop();
         if (['jpg', 'jpeg', 'png', 'gif'].includes(extension)) {
           groups.images.push(file);
-        } else if (['pdf', 'doc', 'docx', 'xls', 'xlsx', 'ppt', 'pptx'].includes(extension)) {
+        } else if (['pdf', 'doc', 'docx', 'xls', 'xlsx', 'ppt', 'pptx', 'txt', 'ino'].includes(extension)) {
           groups.documents.push(file);
         } else if (extension === 'mp3') {
           groups.music.push(file);
@@ -70,9 +69,33 @@ window.addEventListener('DOMContentLoaded', () => {
           fileList.appendChild(fileListByGroup);
         }
       }
+
+      // Adiciona listener para a caixa de pesquisa
+      searchBox.addEventListener('input', e => {
+        const searchTerm = e.target.value.trim().toLowerCase();
+        // Limpa resultados anteriores
+        while (fileList.firstChild) {
+          fileList.removeChild(fileList.firstChild);
+        }
+        files.forEach(file => {
+          if (searchTerm && file.toLowerCase().includes(searchTerm)) {
+            const listItem = document.createElement('li');
+            const link = document.createElement('a');
+            link.href = `${pasta}/${file}`;
+            link.textContent = file;
+            listItem.appendChild(link);
+            fileList.appendChild(listItem);
+          }
+        });
+      });
+
+      // Adiciona listener para limpar a caixa de pesquisa após a submissão
+      searchBox.addEventListener('submit', e => {
+        e.preventDefault();
+        searchBox.value = '';
+      });
     }
   };
   xhr.send();
 });
-
 
