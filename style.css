@@ -1,26 +1,140 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
-  }
-  
-  h1 {
-    color: #333;
-  }
-  
-  ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  li {
-    margin-bottom: 5px;
-  }
-  
-  a {
-    color: #0066cc;
-    text-decoration: none;
-  }
-  
-  a:hover {
-    text-decoration: underline;
-  }
+  background-color: #111;
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+}
+
+h1, h2, h3 {
+  color: #fff;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.file-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 20px;
+}
+
+.file-group {
+  margin-bottom: 30px;
+}
+
+.file-group h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.file-link {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.file-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.search-box {
+  margin-top: 30px;
+}
+
+.search-box input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+}
+
+.zoom-image {
+  position: absolute;
+  z-index: 9999;
+  transition: transform 0.3s;
+  transform-origin: top left;
+}
+
+.zoom-image:hover {
+  transform: scale(1.2);
+}
+
+.image-gallery {
+  margin-bottom: 30px;
+}
+
+.image-gallery h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.image-gallery a {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.video-gallery {
+  margin-bottom: 30px;
+}
+
+.video-gallery h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.video-gallery a {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.music-gallery {
+  margin-bottom: 30px;
+}
+
+.music-gallery h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.document-gallery {
+  margin-bottom: 30px;
+}
+
+.document-gallery h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.executable-gallery {
+  margin-bottom: 30px;
+}
+
+.executable-gallery h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.zip-gallery {
+  margin-bottom: 30px;
+}
+
+.zip-gallery h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.iso-gallery {
+  margin-bottom: 30px;
+}
+
+.iso-gallery h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
